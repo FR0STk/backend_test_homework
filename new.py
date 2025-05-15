@@ -1,18 +1,40 @@
-def calculate_sum_and_average(numbers):
-    total_sum = 0
-    for num in numbers:
-        total_sum += num
+class MushroomsCollector:
+    # Проверьте, нет ли здесь ошибки:
+    def __init__(self):
+        self.mushrooms = []
 
-    average = total_sum / len(numbers)
-    return total_sum, average
+    # Исправьте ошибку в этом методе.
+    def is_poisonous(self, mushroom_name):
+        if mushroom_name == 'Мухомор':
+            return True
+        elif mushroom_name == 'Поганка':
+            return True
+        else:
+            return False
+
+    # Допишите метод.
+    def add_mushroom(self, mushroom_name):
+        if self.is_poisonous == True:
+            return f'Нельзя добавить ядовитый гриб'
+        else:
+            return list.append(self.mushrooms, mushroom_name)
+     
+    def __str__(self):
+        return f'{self.mushrooms}'
+    
+    # Напишите магический метод __str__,
+    # возвращающий перечень грибов из списка mushrooms 
+    # через запятую.
 
 
-numbers = [10, 20, 30, 40, 50]
-total, avg = calculate_sum_and_average(numbers)
-print(f'Сумма чисел: {total}')
-print(f'Среднее значение: {avg}')
+# Пример запуска для самопроверки
+collector_1 = MushroomsCollector()
+collector_1.add_mushroom('Поганка')
+collector_1.add_mushroom('Подосиновик')
+collector_1.add_mushroom('Белый')
+print(collector_1)
 
-numbers = [11, 22, 33, 42, 51]
-total, avg = calculate_sum_and_average(numbers)
-print(f'Сумма чисел: {total}')
-print(f'Среднее значение: {avg}')
+collector_2 = MushroomsCollector()
+collector_2.add_mushroom('Лисичка')
+print(collector_1)
+print(collector_2)
